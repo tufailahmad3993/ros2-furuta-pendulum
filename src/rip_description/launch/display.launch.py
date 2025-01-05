@@ -7,7 +7,7 @@ from ament_index_python.packages import get_package_share_path
 
 def generate_launch_description():
     # Get the path of the urdf file 
-    urdf_path = os.path.join(get_package_share_path('rip_description'), 'urdf', 'rotary_pend.urdf')
+    urdf_path = os.path.join(get_package_share_path('rip_description'), 'urdf', 'rotary_pend.urdf.xacro')
 
     # Robot State Publisher Node
     robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
