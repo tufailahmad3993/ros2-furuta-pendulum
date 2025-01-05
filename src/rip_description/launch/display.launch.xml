@@ -1,0 +1,16 @@
+<launch>
+    <!-- Use FindPackageShare to get the correct path to the urdf file -->
+    <let name="urdf_path" value="$(find_package_share rip_description)/urdf/rotary_pend.urdf" />
+
+    <!-- Robot State Publisher Node -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" 
+            value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+
+    <!-- Joint State Publisher GUI Node -->
+    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
+
+    <!-- RViz2 Node -->
+    <node pkg="rviz2" exec="rviz2" output="screen" />
+</launch>

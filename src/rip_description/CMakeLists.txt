@@ -11,10 +11,8 @@ find_package(ament_cmake REQUIRED)
 # Install urdf
 
 install(
-  DIRECTORY urdf
+  DIRECTORY urdf launch
   DESTINATION share/${PROJECT_NAME}
 )
-
-
 
 ament_package()
